@@ -1,45 +1,58 @@
-/* Add this to your existing CSS file */
-.contact {
-    padding: 80px 0;
-    background: #F5F5F5;
-    text-align: center;
+/* Modern Color Palette (Based on your brand) */
+:root {
+    --primary: #2A5CAA;  /* Deep Blue */
+    --secondary: #00CED1; /* Teal */
+    --accent: #FF6B35;   /* Orange */
+    --dark: #333333;
+    --light: #F5F5F5;
 }
 
-.contact form {
-    max-width: 500px;
-    margin: 0 auto;
+/* Top Bar Styles (Like NexsonIT) */
+.top-bar {
+    background: var(--dark);
+    color: white;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+/* Hero Section with Overlay */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    color: white;
+    padding: 150px 0;
+    position: relative;
+}
+
+/* Course Cards (Like NexsonIT's Services) */
+.course-card {
     background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.course-card:hover {
+    transform: translateY(-10px);
 }
 
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
+/* Floating Contact Button */
+.floating-contact {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+#contact-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.form-group input:focus {
-    border-color: #2A5CAA;
-    outline: none;
-}
-
-.contact .btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    /* Adjustments here */
 }
