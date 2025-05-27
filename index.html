@@ -3,71 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Data Science Academy | Learn Data Science Online</title>
+    <title>The Data Science Academy | Online Training</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header / Navbar -->
+    <!-- Top Bar (Like NexsonIT) -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> hello@thedatascienceacademy.com</span>
+                <span><i class="fas fa-phone"></i> +1 (123) 456-7890</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
     <header>
         <div class="container">
-            <h1 class="logo">The Data Science Academy</h1>
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fas fa-brain"></i></span>
+                <span>The <strong>Data Science</strong> Academy</span>
+            </a>
             <nav>
                 <ul>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#courses">Courses</a></li>
-                    <li><a href="#instructors">Instructors</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Success Stories</a></li>
+                    <li><a href="#contact" class="btn-nav">Enroll Now</a></li>
                 </ul>
             </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Section (Video Background Option) -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
         <div class="container">
-            <h2>Master Data Science with Industry Experts</h2>
-            <p>Learn Python, Machine Learning, AI & more with hands-on projects.</p>
-            <a href="#contact" class="btn">Enroll Now</a>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses" class="courses">
-        <div class="container">
-            <h2>Our Courses</h2>
-            <div class="course-grid">
-                <div class="course-card">
-                    <h3>Python for Data Science</h3>
-                    <p>Learn Pandas, NumPy, and data visualization.</p>
-                </div>
-                <div class="course-card">
-                    <h3>Machine Learning Bootcamp</h3>
-                    <p>From basics to advanced ML algorithms.</p>
-                </div>
-                <div class="course-card">
-                    <h3>SQL & Big Data</h3>
-                    <p>Master databases and Hadoop/Spark.</p>
+            <div class="hero-content">
+                <h1>Become a <span>Data Scientist</span> in 6 Months</h1>
+                <p>Industry-led training with 1:1 mentorship and job placement support.</p>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn-primary">Explore Courses</a>
+                    <a href="#contact" class="btn-secondary">Talk to an Advisor</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Instructors Section -->
-    <section id="instructors" class="instructors">
+    <!-- Stats Bar (Like NexsonIT) -->
+    <section class="stats">
         <div class="container">
-            <h2>Learn from Industry Experts</h2>
-            <div class="instructor-grid">
-                <div class="instructor-card">
-                    <img src="https://via.placeholder.com/150" alt="Instructor">
-                    <h3>Dr. Sarah Chen</h3>
-                    <p>Ex-Google Data Scientist</p>
+            <div class="stat-item">
+                <h3>2,000+</h3>
+                <p>Students Trained</p>
+            </div>
+            <div class="stat-item">
+                <h3>85%</h3>
+                <p>Job Placement Rate</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Industry Projects</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section (Like NexsonIT's Services) -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Courses</span></h2>
+                <p>Hands-on training with real-world datasets and expert mentors.</p>
+            </div>
+            <div class="course-grid">
+                <!-- Course Card 1 -->
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Science Bootcamp</h3>
+                    <p>Master Python, ML, and SQL in 16 weeks.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 100+ hours of training</li>
+                        <li><i class="fas fa-check"></i> Capstone project</li>
+                    </ul>
+                    <a href="#" class="btn-card">Learn More</a>
                 </div>
-                <div class="instructor-card">
-                    <img src="https://via.placeholder.com/150" alt="Instructor">
-                    <h3>Raj Patel</h3>
-                    <p>AI Researcher</p>
-                </div>
+                <!-- Add 2 more cards similarly -->
             </div>
         </div>
     </section>
@@ -75,48 +107,27 @@
     <!-- Testimonials -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2>What Our Students Say</h2>
-            <div class="testimonial-card">
-                <p>"This course changed my career! Landed a job at Amazon."</p>
-                <h4>- Priya K.</h4>
+            <div class="section-header">
+                <h2>Student <span>Success Stories</span></h2>
+            </div>
+            <div class="testimonial-slider">
+                <!-- Testimonial items here -->
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <form action="https://formsubmit.co/projects2488@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="New Enrollment Request!">
-                <input type="hidden" name="_autoresponse" value="Thank you for contacting The Data Science Academy! We'll get back to you soon.">
-                
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email*</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="mobile">Mobile Number*</label>
-                    <input type="tel" id="mobile" name="mobile" placeholder="Your Mobile Number" required>
-                </div>
-                
-                <button type="submit" class="btn">Submit</button>
-            </form>
-        </div>
-    </section>
+    <!-- Contact Form (Fixed button like NexsonIT) -->
+    <div class="floating-contact">
+        <button id="contact-btn"><i class="fas fa-envelope"></i> Get Syllabus</button>
+    </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2024 The Data Science Academy</p>
-            <p>Contact: hello@thedatascienceacademy.com</p>
+            <!-- Footer columns here -->
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
