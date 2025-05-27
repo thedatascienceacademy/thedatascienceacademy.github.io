@@ -1,133 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Data Science Academy | Online Training</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Data Science Academy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5fafd;
+    color: #333;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, #0077b6, #0096c7);
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem 5rem;
+  }
+  header h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 2px;
+  }
+  header p {
+    font-weight: 300;
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Counters Section */
+  .counters {
+    display: flex;
+    justify-content: space-around;
+    background: #caf0f8;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  .counter {
+    flex: 1;
+    max-width: 200px;
+    margin: 0 1rem;
+  }
+  .counter h2 {
+    font-size: 3.5rem;
+    color: #0077b6;
+    margin: 0;
+    font-weight: 700;
+  }
+  .counter p {
+    margin: 0.5rem 0 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #023e8a;
+  }
+
+  /* Syllabus Section */
+  .section {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .section h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #0077b6;
+  }
+  .syllabus-list {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  .syllabus-list li {
+    background: white;
+    margin: 0 0 1rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 5px solid #0096c7;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  /* Testimonials Section */
+  .testimonials {
+    background: #0096c7;
+    color: white;
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto 4rem auto;
+    border-radius: 8px;
+  }
+  .testimonials h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 2.8rem;
+  }
+  .testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .testimonial {
+    background: rgba(255 255 255 / 0.15);
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    max-width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+  }
+  .testimonial::before {
+    content: "“";
+    font-size: 4rem;
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    color: rgba(255 255 255 / 0.3);
+    font-weight: 700;
+  }
+  .testimonial p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  .testimonial .name {
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: right;
+  }
+
+  /* Form Section */
+  .form-container {
+    max-width: 500px;
+    margin: 0 auto 6rem auto;
+    background: white;
+    padding: 2.5rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+  }
+  .form-container h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #0077b6;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #023e8a;
+  }
+  input {
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #a8dadc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  input:focus {
+    outline: none;
+    border-color: #0077b6;
+  }
+  button {
+    background: #0077b6;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.25s ease;
+  }
+  button:hover {
+    background: #023e8a;
+  }
+  .error {
+    color: #d90429;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive */
+  @media(max-width: 700px) {
+    .counters {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+    .counter {
+      margin: 0 auto;
+    }
+    .syllabus-list {
+      columns: 1;
+    }
+    .testimonial-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
 </head>
 <body>
-    <!-- Top Bar (Like NexsonIT) -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="contact-info">
-                <span><i class="fas fa-envelope"></i> hello@thedatascienceacademy.com</span>
-                <span><i class="fas fa-phone"></i> +1 (123) 456-7890</span>
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
+<header>
+  <h1>The Data Science Academy</h1>
+  <p>Empowering You with Cutting-Edge Data Science Skills</p>
+</header>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <a href="#" class="logo">
-                <span class="logo-icon"><i class="fas fa-brain"></i></span>
-                <span>The <strong>Data Science</strong> Academy</span>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#testimonials">Success Stories</a></li>
-                    <li><a href="#contact" class="btn-nav">Enroll Now</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
+<section class="counters" aria-label="Institution Statistics">
+  <div class="counter">
+    <h2 id="count-students">0</h2>
+    <p>Students Enrolled</p>
+  </div>
+  <div class="counter">
+    <h2 id="count-courses">0</h2>
+    <p>Courses Offered</p>
+  </div>
+  <div class="counter">
+    <h2 id="count-experience">0</h2>
+    <p>Years of Experience</p>
+  </div>
+  <div class="counter">
+    <h2 id="count-projects">0</h2>
+    <p>Projects Completed</p>
+  </div>
+</section>
 
-    <!-- Hero Section (Video Background Option) -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Become a <span>Data Scientist</span> in 6 Months</h1>
-                <p>Industry-led training with 1:1 mentorship and job placement support.</p>
-                <div class="hero-buttons">
-                    <a href="#courses" class="btn-primary">Explore Courses</a>
-                    <a href="#contact" class="btn-secondary">Talk to an Advisor</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section syllabus" aria-label="Syllabus">
+  <h2>Syllabus</h2>
+  <ul class="syllabus-list">
+    <li>Introduction to Data Science and Analytics</li>
+    <li>Python Programming for Data Science</li>
+    <li>Statistics and Probability Theory</li>
+    <li>Data Visualization Techniques</li>
+    <li>Machine Learning Fundamentals</li>
+    <li>Deep Learning and Neural Networks</li>
+    <li>Natural Language Processing (NLP)</li>
+    <li>Big Data Technologies</li>
+    <li>Data Cleaning and Preprocessing</li>
+    <li>Project Work & Case Studies</li>
+  </ul>
+</section>
 
-    <!-- Stats Bar (Like NexsonIT) -->
-    <section class="stats">
-        <div class="container">
-            <div class="stat-item">
-                <h3>2,000+</h3>
-                <p>Students Trained</p>
-            </div>
-            <div class="stat-item">
-                <h3>85%</h3>
-                <p>Job Placement Rate</p>
-            </div>
-            <div class="stat-item">
-                <h3>50+</h3>
-                <p>Industry Projects</p>
-            </div>
-        </div>
-    </section>
+<section class="testimonials" aria-label="Student Testimonials">
+  <h2>What Our Students Say</h2>
+  <div class="testimonial-cards">
+    <article class="testimonial" aria-label="Testimonial from John Doe">
+      <p>Enrolling here changed my career path. The instructors are experts and the syllabus is top-notch.</p>
+      <div class="name">— John Doe</div>
+    </article>
+    <article class="testimonial" aria-label="Testimonial from Priya Sharma">
+      <p>The hands-on projects helped me build a portfolio that got me my dream data scientist job!</p>
+      <div class="name">— Priya Sharma</div>
+    </article>
+    <article class="testimonial" aria-label="Testimonial from Michael Lee">
+      <p>The support and guidance throughout the course are remarkable. Highly recommend this academy.</p>
+      <div class="name">— Michael Lee</div>
+    </article>
+  </div>
+</section>
 
-    <!-- Courses Section (Like NexsonIT's Services) -->
-    <section id="courses" class="courses">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our <span>Courses</span></h2>
-                <p>Hands-on training with real-world datasets and expert mentors.</p>
-            </div>
-            <div class="course-grid">
-                <!-- Course Card 1 -->
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Data Science Bootcamp</h3>
-                    <p>Master Python, ML, and SQL in 16 weeks.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> 100+ hours of training</li>
-                        <li><i class="fas fa-check"></i> Capstone project</li>
-                    </ul>
-                    <a href="#" class="btn-card">Learn More</a>
-                </div>
-                <!-- Add 2 more cards similarly -->
-            </div>
-        </div>
-    </section>
+<section class="form-container" aria-label="Student Registration Form">
+  <h2>Register Now</h2>
+  <form id="registrationForm" novalidate>
+    <label for="name">Name *</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required />
+    <div class="error" id="nameError"></div>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Student <span>Success Stories</span></h2>
-            </div>
-            <div class="testimonial-slider">
-                <!-- Testimonial items here -->
-            </div>
-        </div>
-    </section>
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+    <div class="error" id="emailError"></div>
 
-    <!-- Contact Form (Fixed button like NexsonIT) -->
-    <div class="floating-contact">
-        <button id="contact-btn"><i class="fas fa-envelope"></i> Get Syllabus</button>
-    </div>
+    <label for="mobile">Mobile Number *</label>
+    <input type="tel" id="mobile" name="mobile" placeholder="e.g. +1234567890" pattern="^\+?\d{7,15}$" required />
+    <div class="error" id="mobileError"></div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <!-- Footer columns here -->
-        </div>
-    </footer>
+    <button type="submit">Submit</button>
+  </form>
+</section>
 
-    <script src="script.js"></script>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with user ID (replace 'YOUR_USER_ID' with real user id)
+  (function(){
+    emailjs.init('YOUR_USER_ID');
+  })();
+
+  // Animated counters logic
+  const counters = [
+    { id: 'count-students', target: 1500 },
+    { id: 'count-courses', target: 12 },
+    { id: 'count-experience', target: 10 },
+    { id: 'count-projects', target: 350 }
+  ];
+
+  function animateCounter(id, target) {
+    const el = document.getElementById(id);
+    let count = 0;
+    const increment = Math.ceil(target / 100);
+    function update() {
+      count += increment;
+      if (count > target) count = target;
+      el.textContent = count;
+      if (count < target) {
+        requestAnimationFrame(update);
+      }
+    }
+    update();
+  }
+
+  // Animate counters on scroll into view
+  let countersAnimated = false;
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
+  function animateCountersOnScroll() {
+    if (countersAnimated) return;
+    const countersSection = document.querySelector('.counters');
+    if (isElementInViewport(countersSection)) {
+      counters.forEach(counter => animateCounter(counter.id, counter.target));
+      countersAnimated = true;
+    }
+  }
+  window.addEventListener('scroll', animateCountersOnScroll);
+  window.addEventListener('load', animateCountersOnScroll);
+
+  // Form validation and submission with EmailJS
+  const form = document.getElementById('registrationForm');
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const mobileInput = document.getElementById('mobile');
+
+  const nameError = document.getElementById('nameError');
+  const emailError = document.getElementById('emailError');
+  const mobileError = document.getElementById('mobileError');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let valid = true;
+    // Validate name
+    if (nameInput.value.trim() === '') {
+      nameError.textContent = 'Please enter your name';
+      valid = false;
+    } else {
+      nameError.textContent = '';
+    }
+    // Validate email
+    if (emailInput.value.trim() === '') {
+      emailError.textContent = 'Please enter your email';
+      valid = false;
+    } else if (!validateEmail(emailInput.value.trim())) {
+      emailError.textContent = 'Please enter a valid email address';
+      valid = false;
+    } else {
+      emailError.textContent = '';
+    }
+    // Validate mobile
+    if (mobileInput.value.trim() === '') {
+      mobileError.textContent = 'Please enter your mobile number';
+      valid = false;
+    } else if (!validateMobile(mobileInput.value.trim())) {
+      mobileError.textContent = 'Please enter a valid mobile number (+1234567890)';
+      valid = false;
+    } else {
+      mobileError.textContent = '';
+    }
+
+    if (!valid) {
+      return;
+    }
+
+    // Prepare email parameters
+    const templateParams = {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      mobile: mobileInput.value.trim(),
+    };
+
+    // Send email using EmailJS
+    emailjs.send('service_abc123', 'template_xyz789', templateParams)
+      .then(function(response) {
+        alert('Thank you for registering! We will contact you soon.');
+        form.reset();
+      }, function(error) {
+        alert('Oops! Something went wrong. Please try again later.');
+      });
+  });
+
+  function validateEmail(email) {
+    // Basic email regex
+    const re = /^[\\w.-]+@[\\w.-]+\\.[A-Za-z]{2,}$/;
+    return re.test(email);
+  }
+  function validateMobile(mobile) {
+    // Accepts + and digits, 7-15 characters
+    const re = /^\+?\\d{7,15}$/;
+    return re.test(mobile);
+  }
+</script>
 </body>
 </html>
+
